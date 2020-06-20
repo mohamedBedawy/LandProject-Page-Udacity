@@ -1,0 +1,300 @@
+/*
+ *
+ * CSS written based on SMACSS architecture.
+ * To learn more, visit: http://smacss.com/
+ * 
+ * For simplicity, no reset or normalize is added. 
+ * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
+ *
+*/
+
+/* add Scroll-behvior to smooth*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- Base Rules ---- */
+body {
+  background: rgb(136, 203, 171);
+  background: linear-gradient(
+    0deg,
+    rgba(136, 203, 171, 1) 0%,
+    rgba(0, 13, 60, 1) 100%
+  );
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: #fff;
+}
+
+/* Typeography General*/
+h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 3em;
+}
+
+
+
+h2 {
+  border-bottom: 1px solid #cc1;
+  font-family: "Oxygen", Sans-Serif;
+  font-size: 3em;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6em;
+  color: #eee;
+}
+
+/* ---- Layout Rules ---- */
+main {
+  margin: 10vh 1em 10vh;
+}
+
+.allSection {
+  display: flex;
+  flex-direction: column;
+}
+.main-hero {
+  min-height: 40vh;
+  padding-top: 3em;
+}
+
+section {
+  position: relative;
+  min-height: 80vh;
+}
+
+.active {
+  background-color: #333 !important;
+  transition: ease 0.4s all;
+
+}
+.active::before {
+    margin-top: 100px;
+  }
+/* ---- Module Rules ---- */
+
+/* Navigation Styles*/
+.navbar__menu{
+    position: fixed;
+    margin-top: 8%;
+    overflow: auto;
+    max-height: 50%;
+    width: 15%;
+}
+.navbar__menu ul {
+  padding-left: 0;
+  margin: 0;
+  text-align: left;
+  list-style-type: none;
+
+}
+
+.navbar__menu li {
+  margin: 4px 0px;
+  padding: 8px 7px;
+  color: #eef2f9;
+  background-color: #001d37;
+  cursor: pointer;
+}
+.navbar__menu li a {
+    color: #eef2f9;
+    text-decoration: none;
+  }
+  .navbar__menu li:hover a {
+    color: #001d37;
+  }
+.navbar__menu .menu__link:hover {
+  background: #eef2f9;
+  color: #001d37;
+  transition: ease 0.3s all;
+}
+.navbar__menu .menu__link a:hover {
+    color: #001d37;
+    transition: ease 0.3s all;
+  }
+nav::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3ec1d5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 112, 119);
+}
+
+::-webkit-scrollbar-track {
+  background: #c5c0c0;
+  border: 0px none #ffffff;
+  border-radius: 53px;
+}
+
+/* Header Styles */
+.page__header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #001d37;
+  box-shadow: 0px 0px 30px #22636d;
+  padding: 6px 30px;
+  border-radius: 10px;
+}
+.logo{
+    position: fixed;
+    width: 15%;
+    background-color: #eef2f9;
+    box-shadow: 0px 0px 15px #001d37;
+    padding: 10px;
+    margin: 15px 15px 15px 0px;
+    border-radius: 10px;
+    
+}
+/* Footer Styles */
+.page__footer {
+  background: #000;
+  padding: 3em;
+  color: #fff;
+}
+
+.page__footer p {
+  color: #fff;
+}
+
+.landing__container {
+    max-width: 50em;
+    padding: 6em;
+  }
+
+
+/* Background Circles */
+/* Note that background circles are created with psuedo elements before and after */
+/* Circles appear to be random do to use of :nth-of-type psuedo class */
+section:nth-of-type(odd) ::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.187);
+  position: absolute;
+  z-index: -5;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(even) ::before {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n) ::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -5;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+section:nth-of-type(3n + 1) ::after {
+  content: "";
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  position: absolute;
+  right: 20vw;
+  bottom: -5em;
+  z-index: -5;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  opacity: 0;
+  transition: ease 0.5s all;
+}
+
+/* ---- Theme State Rules ---- */
+/* Section Active Styles */
+/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.active {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.active ::before {
+  opacity: 1;
+  animation: rotate 4s linear 0s infinite forwards;
+}
+
+.active ::after {
+  opacity: 1;
+  animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+/* Section Active Styles Keyframe Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) translate(-1em) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* add css Top button */
+.topButton{
+    background-color: #18d0c7;
+    position: fixed;
+    transform: rotate(90deg);
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    bottom: 5%;
+    right: 5%;
+    box-shadow: 0px 0px 2px #f1f5f7;
+}
+
+.topButton:hover{
+    background-color: #18d0c7;
+    box-shadow: 0px 0px 10px #f1f5f7;
+}
+
+.topButton.hide{
+    display: none;
+}
