@@ -32,8 +32,6 @@ h1 {
   font-size: 3em;
 }
 
-
-
 h2 {
   border-bottom: 1px solid #cc1;
   font-family: "Oxygen", Sans-Serif;
@@ -68,27 +66,25 @@ section {
 .active {
   background-color: #333 !important;
   transition: ease 0.4s all;
-
 }
 .active::before {
-    margin-top: 100px;
-  }
+  margin-top: 100px;
+}
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu{
-    position: fixed;
-    margin-top: 8%;
-    overflow: auto;
-    max-height: 50%;
-    width: 15%;
+.navbar__menu {
+  position: fixed;
+  margin-top: 8%;
+  overflow: auto;
+  max-height: 50%;
+  width: 15%;
 }
 .navbar__menu ul {
   padding-left: 0;
   margin: 0;
   text-align: left;
   list-style-type: none;
-
 }
 
 .navbar__menu li {
@@ -99,21 +95,21 @@ section {
   cursor: pointer;
 }
 .navbar__menu li a {
-    color: #eef2f9;
-    text-decoration: none;
-  }
-  .navbar__menu li:hover a {
-    color: #001d37;
-  }
+  color: #eef2f9;
+  text-decoration: none;
+}
+.navbar__menu li:hover a {
+  color: #001d37;
+}
 .navbar__menu .menu__link:hover {
   background: #eef2f9;
   color: #001d37;
   transition: ease 0.3s all;
 }
 .navbar__menu .menu__link a:hover {
-    color: #001d37;
-    transition: ease 0.3s all;
-  }
+  color: #001d37;
+  transition: ease 0.3s all;
+}
 nav::-webkit-scrollbar {
   width: 11px;
   height: 11px;
@@ -145,15 +141,14 @@ nav::-webkit-scrollbar {
   padding: 6px 30px;
   border-radius: 10px;
 }
-.logo{
-    position: fixed;
-    width: 15%;
-    background-color: #eef2f9;
-    box-shadow: 0px 0px 15px #001d37;
-    padding: 10px;
-    margin: 15px 15px 15px 0px;
-    border-radius: 10px;
-    
+.logo {
+  position: fixed;
+  width: 15%;
+  background-color: #eef2f9;
+  box-shadow: 0px 0px 15px #001d37;
+  padding: 10px;
+  margin: 15px 15px 15px 0px;
+  border-radius: 10px;
 }
 /* Footer Styles */
 .page__footer {
@@ -167,11 +162,43 @@ nav::-webkit-scrollbar {
 }
 
 .landing__container {
+  max-width: 50em;
+  padding: 6em;
+  max-height: 830px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+/* for small Size Screen sizes  */
+@media only screen and (max-width: 800px) {
+  .landing__container {
     max-width: 50em;
-    padding: 6em;
+    padding: 5em 1em 1em 1em;
+    text-align: justify;
+    }
+  .page__header {
+    font-size: 10px;
   }
 
-
+  /* Navigation Styles*/
+  .navbar__menu {
+    position: fixed;
+    margin-top: 15%;
+    overflow: auto;
+    max-height: 50%;
+    width: 20%;
+    font-size: 11px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: left;
+    list-style-type: none;
+  }
+}
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
@@ -277,24 +304,24 @@ section.active {
 }
 
 /* add css Top button */
-.topButton{
-    background-color: #18d0c7;
-    position: fixed;
-    transform: rotate(90deg);
-    border-radius: 50%;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    bottom: 5%;
-    right: 5%;
-    box-shadow: 0px 0px 2px #f1f5f7;
+.topButton {
+  background-color: #18d0c7;
+  position: fixed;
+  transform: rotate(90deg);
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  bottom: 5%;
+  right: 5%;
+  box-shadow: 0px 0px 2px #f1f5f7;
 }
 
-.topButton:hover{
-    background-color: #18d0c7;
-    box-shadow: 0px 0px 10px #f1f5f7;
+.topButton:hover {
+  background-color: #18d0c7;
+  box-shadow: 0px 0px 10px #f1f5f7;
 }
 
-.topButton.hide{
-    display: none;
+.topButton.hide {
+  display: none;
 }
